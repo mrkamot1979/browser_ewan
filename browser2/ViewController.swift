@@ -11,6 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var searchTextfield: UITextField!
+    @IBOutlet weak var resultTextView: UITextView!
+    
+    
+    @IBAction func searchButton(_ sender: Any)
+    {
+    
+    
+    }
+    
     
     
 
