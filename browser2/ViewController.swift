@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         
         //URL for the session
-        let url = URL(string: "https://api.fixer.io/2017-11-04")
+        let url = URL(string: "https://www.dictionary.com/browse/dog?s=t")
         
         //this is a completion hander, essentially it executes AFTER the task is complete
         //when task is complete, we are going to get 3 variables, data, response and error.
@@ -51,33 +51,10 @@ class ViewController: UIViewController {
             }
             else
             {
-                //self.myImageView.image = UIImage(data: data!)
-                
-                //do catch mechanism; similar to "try catch finally".  essentially what we want to do is parse the JSON data from the URL.  if an error occurs, the do catch mechanism should appropriately throw the error
-                //and catch it - respond accordingly.
-                do
+                if let content = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 {
-                    //line below is needed to make JSON data; essentially the data found in the specified URL is going to be converted to JSON data.
-                    let myJSON = try JSONSerialization.jsonObject(with: data!,  options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                    
-                    //if function below essentially says "if rates can be converted as NSDictionary".  note that only "rates" section put into myJSON and not all of the output from the URL.
-                    if let rates = myJSON["rates"] as? NSDictionary
-                    {
-                        if let myCurrency = rates["NOK"] //this line means that if "NOK" can be found in the rates section, show the value.
-                        {
-                            print(myCurrency)
-                        }
-                    }
-                    else
-                    {
-                        //ERROR
-                    }
+                    print(content)
                 }
-                catch
-                {
-                    //handle the error
-                }
-                
             }
         }
         
