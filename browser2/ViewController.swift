@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         
         //URL for the session
-        let url = URL(string: "https://www.dictionary.com/browse/dog?s=t")
+        let url = URL(string: "http://www.dictionary.com/browse/dog?s=t")
         
         //this is a completion hander, essentially it executes AFTER the task is complete
         //when task is complete, we are going to get 3 variables, data, response and error.
