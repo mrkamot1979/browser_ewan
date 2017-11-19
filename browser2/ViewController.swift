@@ -53,7 +53,8 @@ class ViewController: UIViewController {
             {
                 if let content = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 {
-                    print(content)
+                    var array = content.components(separatedBy: "/><meta name=\"description\" contents=\"")
+                    print(array[1])
                 }
             }
         }
